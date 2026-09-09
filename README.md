@@ -26,12 +26,15 @@ A major portion of this project focuses on string parsing and numerical standard
 
 1. Rating Imputation & Outlier Removal:
    - Capped erroneous ratings $>5.0$ to NaN and imputed missing values using the mean rating ($\approx 4.19$).
-3. Deduplication via Smart Grouping:
+
+2. Deduplication via Smart Grouping:
    - Identified 1,979 duplicate app listings.
    - Sorted records by App title and Reviews count, dropping earlier duplicates while retaining only the latest entry with the highest review count.
+
 3. Size Unit Conversion (To Bytes):
    - Parsed string suffix indicators (M for Megabytes, k for Kilobytes).
    - Converted values to exact byte counts ($1\text{ MB} = 1024 \times 1024\text{ bytes}$) and handled "Varies with device" values cleanly.
+
 4. Monetization & Install Cleaning:
    - Stripped special characters (+, ,, $) from Installs and Price fields to cast them into numeric types (float64 / int64).
    - Engineered an auxiliary categorical column Distribution (Free vs Paid).
